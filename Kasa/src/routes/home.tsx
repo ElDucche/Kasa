@@ -7,11 +7,12 @@ const Home = () => {
   return (
     <div className='grid gap-4 min-h-screen'>
       <Banner />
-      {
-        data.map((item: any, index: number) => {
-          <h2 className="font-bold">{item.title}</h2>
-        })
-      }
+      <div>
+        {
+          data.map((item:any) => 
+          )
+        }
+      </div>
     </div>
   )
 }

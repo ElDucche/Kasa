@@ -15,8 +15,7 @@ export default function ErrorPage() {
                     <h2 className="text-3xl text-primary font-medium text-center">
                         {
                             (error as {status?: number}).status === 404 ? "Oups la page que vous demandez n'existe pas" : (error as {data?: string}).data
-                        }
-                        
+                        }                     
                     </h2>
                     <Link to={'/'} className="text-xl no-underline hover:underline text-black font-medium">Retourner sur la page d'accueil</Link>
                 </div>
