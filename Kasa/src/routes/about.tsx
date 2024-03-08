@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import Banner from "../components/layout/Banner"
 
 const About = () => {
-    const [count, setCount] = useState(0);
 
   return (
-    <div className='h-screen w-full grid place-content-center place-items-center'>
-        <button onClick={() => setCount(count+1)} className='border-2 border-black py-2 px-4 border-b-8 rounded-full active:border-b-2'> <i className='text-lg font-light not-italic'>Click</i>  {count} </button>
+    <div className='h-screen w-full'>
+      <Banner title={false} img={'mountain.png'}/>
     </div>
   )
 }
