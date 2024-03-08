@@ -1,5 +1,6 @@
 import { useLoaderData } from 'react-router-dom'
 import Banner from '../components/home/Banner'
+import Card from '../components/home/Card'
 // import Card from '../components/home/Card'
 
 const Home = () => {
@@ -9,7 +10,8 @@ const Home = () => {
       <Banner />
       <div>
         {
-          data.map((item:any) => 
+          data.map((item) => 
+          <Card key={item.id} data={item} />
           )
         }
       </div>

@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 
-const Card = () => {
-   
+const Card = ({data} : {data:any}) => {
+   const {id, title, cover} = data
+    console.log(id)
     return (
-        <Link to={`/`} className={`bg-primary w-44 relative bg-contain`}>
-            <h3 className="text-white fonct-bold text-xl">Coucou</h3>
-        </Link>
+        <div className={`aspect-square bg-[url(${cover})] relative bg-cover rounded-xl`} style={{backgroundImage: `url(${cover})`}}>
+            <Link to={`/`} className="text-xl font-bold no-underline absolute bottom-2 left-2 text-white w-44">
+                {title}
+            </Link>
+        </div>
     );
 }
 export default Card;
