@@ -1,7 +1,7 @@
 const Banner = ({title, img} : {title:boolean, img:string}) => {
 
     return (
-            <div className={`bg-fixed h-36 md:h-44 bg-contain rounded-xl`} style={{backgroundImage: `url(${img})`}}>
+            <div className={`bg-fixed h-36 md:h-44 bg-cover rounded-xl bg-no-repeat`} style={{backgroundImage: `url(${img})`}}>
                 {
                     title ?
                         <h2 className="font-bold text-white text-4xl h-full bg-black/70 rounded-xl pl-4 flex flex-col justify-center md:items-center">

@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import './index.css'
 import Home from './routes/home';
 import About from './routes/about';
+import Annonce from './components/pages/Annonce';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
         path: '/about',
         element: <About />
       },
+      {
+        path: '/:id',
+        element: <Annonce />,
+        loader: async ({params}) => {
+          const data = await fetch('../../data.json').then(res => res.json())
+          return data.find((item: any) => item.id === params.id)
+        }
+      }
     ],
   },
 ])
