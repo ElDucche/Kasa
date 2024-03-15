@@ -16,7 +16,7 @@ const Annonce = () => {
             <div className="grid lg:flex lg:justify-between lg:gap-4 mb-4">
                 <div className="grid w-full h-fit gap-2">
                     <h1 className='text-primary font-medium text-4xl'>{data.title}</h1>
-                    <h2 className="font-medium text-2xl">{data.location}</h2>
+                    <h2 className=" font-normal text-2xl mb-4">{data.location}</h2>
                     <div className='flex items-center gap-4'>
                         {
                             data.tags.map((tag:string, index:number) => 
@@ -30,7 +30,7 @@ const Annonce = () => {
                     <div className='flex gap-1 lg:gap-3'>
                         {
                             Array(+data.rating).fill(0).map((_, index) => 
-                                <FaStar key={index} size={25} className='text-primary'/>
+                                <FaStar key={index} size={'35px'} className='text-primary'/>
                             )
                         }
                         {
