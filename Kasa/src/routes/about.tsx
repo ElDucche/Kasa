@@ -4,7 +4,7 @@ import Banner from "../components/layout/Banner"
 const About = () => {
 
   return (
-    <div className='h-full w-full grid gap-4 pb-4'>
+    <div className='grid gap-4 pb-4'>
       <Banner title={false} img={'mountain.png'}/>
       <div className="grid gap-4">
         <Accordeon title={'Fiabilité'}>

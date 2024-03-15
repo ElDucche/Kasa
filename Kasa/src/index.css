@@ -8,6 +8,6 @@
         @apply font-sans m-0 p-0
     }
     .nav-link {
-        @apply  uppercase font-medium text-black text-2xl no-underline hover:underline font-sans md:justify-self-end
+        @apply  uppercase font-medium text-black text-2xl no-underline hover:underline font-sans lg:justify-self-end
     }
 }

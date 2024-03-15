@@ -2,17 +2,19 @@ import { useLoaderData } from 'react-router-dom';
 import Accordeon from '../layout/Accordeon';
 import Tag from '../layout/Tag';
 import { FaStar } from "react-icons/fa";
+import Slideshow from '../layout/Slideshow';
+import ErrorPage from '../../error-page';
 
 
 const Annonce = () => {
     const data: any = useLoaderData();
     console.log(data)
-
+    if (!data) return <ErrorPage />
     return (
         <div className=' pb-4'>
-            <img src={data.cover} alt="" className='rounded-2xl w-full md:h-96 md:overflow-auto mb-4'/>
-            <div className="grid md:flex md:justify-between md:gap-4 ">
-                <div className="grid w-full h-fit gap-2 mb-4">
+            <Slideshow photos={data.pictures} />
+            <div className="grid lg:flex lg:justify-between lg:gap-4 mb-4">
+                <div className="grid w-full h-fit gap-2">
                     <h1 className='text-primary font-medium text-4xl'>{data.title}</h1>
                     <h2 className="font-medium text-2xl">{data.location}</h2>
                     <div className='flex items-center gap-4'>
@@ -24,8 +26,8 @@ const Annonce = () => {
                     </div>
                 </div>
                 
-                <div className="flex items-center justify-between w-full md:w-fit md:flex-col-reverse md:justify-between md:items-end">
-                    <div className='flex gap-1'>
+                <div className="flex items-center justify-between w-full lg:w-fit lg:flex-col-reverse lg:justify-between lg:items-end">
+                    <div className='flex gap-1 lg:gap-3'>
                         {
                             Array(+data.rating).fill(0).map((_, index) => 
                                 <FaStar key={index} size={25} className='text-primary'/>
@@ -37,14 +39,14 @@ const Annonce = () => {
                             )
                         }
                     </div>
-                    <div className='flex items-center gap-4 w-1/3 md:w-full'>
-                        <span className='text-primary text-xl text-right'> {data.host.name} </span>
-                        <img src={data.host.picture} alt={data.host.name} className='rounded-full w-16' />
+                    <div className='flex items-center gap-4 w-1/3 lg:w-full'>
+                        <span className='text-primary text-xl lg:text-2xl text-right'> {data.host.name} </span>
+                        <img src={data.host.picture} alt={data.host.name} className='rounded-full w-16 lg:w-20' />
                     </div>
                 </div>
             </div>
 
-            <div className='grid gap-4 md:flex md:items-start md:justify-between'>
+            <div className='grid gap-4 lg:flex lg:items-start lg:justify-between lg:gap-24'>
                 <Accordeon title='Description'>
                     {data.description}
                 </Accordeon>

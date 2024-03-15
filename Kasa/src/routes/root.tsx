@@ -7,7 +7,7 @@ import Footer from "../components/layout/Footer"
 const Layout = () => {
 
   return (
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen grid content-between">
         <div className="w-11/12 mx-auto">
           <Navbar />
           <Outlet />
