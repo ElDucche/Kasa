@@ -8,7 +8,6 @@ import ErrorPage from '../../error-page';
 
 const Annonce = () => {
     const data: any = useLoaderData();
-    console.log(data)
     if (!data) return <ErrorPage />
     return (
         <div className=' pb-4'>

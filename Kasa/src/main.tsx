@@ -9,6 +9,7 @@ import './index.css'
 import Home from './routes/home';
 import About from './routes/about';
 import Annonce from './components/pages/Annonce';
+import { getAllDatas, getOneData } from './utils/api';
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: async () => {
-          const data = await fetch('../../data.json').then(res => res.json())
-          return data
-        }
+        loader: getAllDatas
       },
       {
         path: '/about',
@@ -31,10 +29,7 @@ const router = createBrowserRouter([
       {
         path: '/:id',
         element: <Annonce />,
-        loader: async ({params}) => {
-          const data = await fetch('../../data.json').then(res => res.json())
-          return data.find((item: any) => item.id === params.id)
-        }
+        loader: getOneData
       }
     ],
   },
