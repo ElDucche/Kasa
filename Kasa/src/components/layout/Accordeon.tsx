@@ -13,9 +13,9 @@ const Accordeon = ({title, children} : {title:string, children:any}) => {
     
                 </button>
                 
-                <p className={`relative -z-10 bg-secondary pt-8 p-4 text-black ${isOpen ? 'animate-reveal' : 'animate-hide'} ${isFirstTime ? 'hidden' : ''}`} >
+                <div className={`relative -z-10 bg-secondary pt-8 p-4 text-black ${isOpen ? 'animate-reveal' : 'animate-hide'} ${isFirstTime ? 'hidden' : ''}`} >
                     {children}
-                </p>
+                </div>
         </div>
     )
 }
